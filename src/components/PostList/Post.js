@@ -15,7 +15,7 @@ class Post extends Component {
       	<div className="post-details">
 	      	<div className="post-header">
 	        	<p className="track-title">{trackTitle}</p>
-	        	<p>{artistName}</p>
+	        	<p className="artist-name">{artistName}</p>
 	      	</div>
 	      	<div>
 	        	<p className="post-title">{postTitle}</p>
@@ -23,7 +23,7 @@ class Post extends Component {
 	      	</div>
         </div>
         <div className="image-container">
-        	<img src={imgSrc} alt="Image Unavailable"/>
+        	<img src={imgSrc} alt="Unavailable"/>
         </div>
       </div>
     );
