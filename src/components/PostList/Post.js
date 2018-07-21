@@ -11,12 +11,20 @@ class Post extends Component {
 		} = this.props
 
     return (
-      <div>
-        <p>{postTitle}</p>
-        <p>{description}</p>
-        <p>{imgSrc}</p>
-        <p>{trackTitle}</p>
-        <p>{artistName}</p>
+      <div className="post-container">
+      	<div className="post-details">
+	      	<div className="post-header">
+	        	<p className="track-title">{trackTitle}</p>
+	        	<p>{artistName}</p>
+	      	</div>
+	      	<div>
+	        	<p className="post-title">{postTitle}</p>
+	        	<p className="post-description">{description}</p>
+	      	</div>
+        </div>
+        <div className="image-container">
+        	<img src={imgSrc} alt="Image Unavailable"/>
+        </div>
       </div>
     );
   }
