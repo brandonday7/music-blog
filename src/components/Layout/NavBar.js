@@ -8,7 +8,7 @@ class NavBar extends Component {
 		this.state = {
 			title: "TOP TRACKS",
 			cursor: "",
-			open: true
+			open: false
 		}
 	}
 
