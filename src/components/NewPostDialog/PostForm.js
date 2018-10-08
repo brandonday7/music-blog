@@ -3,7 +3,7 @@ import TextBox from "./TextBox"
 import "./newpost.css"
 
 const PostForm = ({ title, description, artistName, trackTitle, image, onChange }) => (
-	<div className="flex-col" >
+	<div className="flex-col post-form">
 		<TextBox label="Post" val={title} onChange={onChange} />
 		<TextBox label="Description" val={description} onChange={onChange} />
 		<TextBox label="Artist Name" val={artistName} onChange={onChange} />
