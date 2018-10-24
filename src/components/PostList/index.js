@@ -1,27 +1,29 @@
-import React, { Component } from 'react';
-import Post from "./Post"
-import "./post-list.css"
+import React, { Component } from "react";
+import Post from "./Post";
+import "./post-list.css";
 
 class PostList extends Component {
-  render() {
-		const { posts } = this.props
-    return (
-      <div>
+	render() {
+		const { posts, refetch } = this.props;
+		return (
+			<div>
 				{posts.map((post, index) => {
 					return (
-						<Post 
+						<Post
 							key={index}
+							id={post.id}
 							postTitle={post.title}
 							description={post.description}
 							imgSrc={post.image}
 							trackTitle={post.track.title}
 							artistName={post.artist.name}
+							refetch={refetch}
 						/>
-					)
-				})}      
-      </div>
-    );
-  }
+					);
+				})}
+			</div>
+		);
+	}
 }
 
 export default PostList;

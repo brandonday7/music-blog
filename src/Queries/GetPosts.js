@@ -7,6 +7,7 @@ import NewPostDialog from "../components/NewPostDialog";
 const GET_POSTS = gql`
 	{
 		getPosts {
+			id
 			title
 			track {
 				title
@@ -28,7 +29,7 @@ const GetPosts = ({ open, closeDialog }) => (
 			else {
 				return (
 					<div>
-						<PostList posts={data.getPosts} />
+						<PostList posts={data.getPosts} refetch={refetch} />
 						<NewPostDialog
 							open={open}
 							closeDialog={closeDialog}
