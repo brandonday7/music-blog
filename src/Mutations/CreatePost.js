@@ -4,24 +4,25 @@ import { Mutation } from "react-apollo";
 
 class CreatePost extends Component {
   NEW_POST = gql`
-    mutation CreatePost($newCatParams: NewServiceCatAttributes!) {
-      newServiceCat(params: $newCatParams) {
-        success
+    mutation newPost($newPostParams: NewPostInput!) {
+      newPost(input: $newPostParams) {
+        posted
         errors
       }
     }
   `;
 
   render() {
+    const { newPostParams, closeDialog } = this.props;
     return (
       <Mutation
         mutation={this.NEW_POST}
         variables={{
-          newCatParams
+          newPostParams
         }}
-        onCompleted={data => {
-          console.log(data);
-        }}
+        onCompleted={() => closeDialog()}
+        refetchQueries={["getPosts"]}
+        awaitRefetchQueries={true}
       >
         {newPost => (
           <div className="create button" onClick={newPost}>
