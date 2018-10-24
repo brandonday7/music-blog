@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import gql from "graphql-tag";
 import { Mutation } from "react-apollo";
+import "../components/PostList/post-list.css";
+import x from "../images/x.svg";
 
 class DeletePost extends Component {
   DELETE_POST = gql`
@@ -22,7 +24,11 @@ class DeletePost extends Component {
         }}
         onCompleted={() => refetch()}
       >
-        {deletePost => <p onClick={() => deletePost()}>X</p>}
+        {deletePost => (
+          <div className="delete-div" onClick={() => deletePost()}>
+            <img src={x} alt="X" className="delete-icon" />
+          </div>
+        )}
       </Mutation>
     );
   }

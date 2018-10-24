@@ -15,7 +15,6 @@ class Post extends Component {
 
 		return (
 			<div className="post-container">
-				<DeletePost id={Number(id)} refetch={refetch} />
 				<div className="post-details">
 					<div className="post-header">
 						<p className="track-title">{trackTitle}</p>
@@ -27,7 +26,8 @@ class Post extends Component {
 					</div>
 				</div>
 				<div className="image-container">
-					<img src={imgSrc} alt="Unavailable" />
+					<DeletePost id={Number(id)} refetch={refetch} />
+					<img className="album-art" src={imgSrc} alt="Unavailable" />
 				</div>
 			</div>
 		);
