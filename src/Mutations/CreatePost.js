@@ -13,16 +13,17 @@ class CreatePost extends Component {
   `;
 
   render() {
-    const { newPostParams, closeDialog } = this.props;
+    const { newPostParams, closeDialog, refetch } = this.props;
     return (
       <Mutation
         mutation={this.NEW_POST}
         variables={{
           newPostParams
         }}
-        onCompleted={() => closeDialog()}
-        refetchQueries={["getPosts"]}
-        awaitRefetchQueries={true}
+        onCompleted={() => {
+          refetch();
+          closeDialog();
+        }}
       >
         {newPost => (
           <div className="create button" onClick={newPost}>

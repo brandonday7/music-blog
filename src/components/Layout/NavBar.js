@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import NewPostDialog from "../NewPostDialog";
 
 import "./layout.css";
 
@@ -8,8 +7,7 @@ class NavBar extends Component {
 		super(props);
 		this.state = {
 			title: "TOP TRACKS",
-			cursor: "",
-			open: false
+			cursor: ""
 		};
 	}
 
@@ -27,11 +25,9 @@ class NavBar extends Component {
 		}
 	};
 
-	openDialog = () => this.setState({ open: true });
-	closeDialog = () => this.setState({ open: false });
-
 	render() {
-		const { title, cursor, open } = this.state;
+		const { title, cursor } = this.state;
+		const { openDialog } = this.props;
 		return (
 			<div
 				className="nav-container"
@@ -41,11 +37,10 @@ class NavBar extends Component {
 				<p
 					style={{ cursor: `${cursor}` }}
 					className="nav-text"
-					onClick={() => this.openDialog()}
+					onClick={() => openDialog()}
 				>
 					{title}
 				</p>
-				<NewPostDialog open={open} closeDialog={this.closeDialog} />
 			</div>
 		);
 	}

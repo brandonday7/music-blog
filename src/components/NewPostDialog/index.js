@@ -19,7 +19,7 @@ class NewPostDialog extends Component {
 	onChange = (type, val) => this.setState({ [type]: val });
 
 	render() {
-		const { open, closeDialog } = this.props;
+		const { open, closeDialog, refetch } = this.props;
 		const { title, description, artistName, trackTitle, image } = this.state;
 		return (
 			<div>
@@ -42,6 +42,7 @@ class NewPostDialog extends Component {
 								<CreatePost
 									newPostParams={{ params: this.state }}
 									closeDialog={closeDialog}
+									refetch={refetch}
 								/>
 							</div>
 						</div>
