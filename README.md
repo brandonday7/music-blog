@@ -13,7 +13,7 @@
 1. Clone repo:
 
 ```
-git clone git@github.com:brandonday7/music-blog-api.git
+git clone git@github.com:brandonday7/music-blog.git
 ```
 
 2. Install dependencies:
